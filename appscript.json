@@ -1,0 +1,47 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.metadata",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.action",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.addons.current.action.compose",
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile" 
+  ],
+  "runtimeVersion": "V8",
+  "addOns": {
+    "common": {
+      "name": "EMAIL GENIE",
+      "logoUrl": "https://your-logo-url.png",
+      "homepageTrigger": {
+        "runFunction": "showSidebar"
+      },
+      "openLinkUrlPrefixes": [
+        "https://your-allowed-url.com"
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "onGmailMessageOpen"
+        }
+      ],
+      "primaryColor": "#aed964",
+      "secondaryColor": "#D3E3FD",
+      "universalActions": [
+        {
+          "text": "Open ReplyGenie",
+          "runFunction": "showSidebar"
+        }
+      ]
+    }
+  }
+}
