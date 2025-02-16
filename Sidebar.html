@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>LLM Email Assistant</title>
+  <style>
+    body { font-family: sans-serif; margin: 10px; }
+    #output { margin-top: 10px; white-space: pre-wrap; }
+    .section { margin-bottom: 10px; } /* Space between sections */
+    .title { font-weight: bold; margin-bottom: 5px; } /* Bold section titles */
+    #aiReply { width: 100%; height: 150px; margin-bottom: 10px; } /* Editable reply area */
+    .button { padding: 8px 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; } /* Style the button */
+    .error { color: red; } /* Style error messages */
+  </style>
+</head>
+<body>
+  <h1>LLM Email Assistant</h1>
+
+  <div id="emailSection" class="section">
+    <div class="title">Extracted Email:</div>
+    <div id="extractedEmail"></div> </div>
+
+  <div id="senderSection" class="section">
+    <div class="title">Sender:</div>
+    <div id="senderName"></div>
+  </div>
+
+  <div id="aiSection" class="section">
+    <div class="title">AI Analysis:</div>
+    <textarea id="aiReply"></textarea><br>
+    <button class="button" onclick="sendReply()">Send Reply</button>
+  </div>
+
+  <div id="errorSection" class="section error"></div> <div id="debugSection" class="section"></div>
+
+  <script>
+    // ... (Existing JavaScript code)
+
+    function displayEmailContent(emailContent) {
+      document.getElementById('extractedEmail').innerText = emailContent;
+    }
+
+    function displaySenderName(senderName) {
+      document.getElementById('senderName').innerText = senderName;
+    }
+
+    function displayAIAnalysis(aiAnalysis) {
+      document.getElementById('aiReply').value = aiAnalysis;
+    }
+
+    function sendReply() {
+      const replyText = document.getElementById('aiReply').value;
+      google.script.run.withSuccessHandler(replySent).sendReply(replyText);
+    }
+
+    function replySent(status) {
+      alert(status); // Replace with a better UI update
+    }
+
+    // ... (Rest of the JavaScript code)
+  </script>
+</body>
+</html>
