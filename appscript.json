@@ -13,13 +13,13 @@
     "https://www.googleapis.com/auth/gmail.addons.current.action.compose",
     "https://www.googleapis.com/auth/drive",
     "https://www.googleapis.com/auth/userinfo.email",
-    "https://www.googleapis.com/auth/userinfo.profile" 
+    "https://www.googleapis.com/auth/userinfo.profile"
   ],
   "runtimeVersion": "V8",
   "addOns": {
     "common": {
-      "name": "EMAIL GENIE",
-      "logoUrl": "https://your-logo-url.png",
+      "name": "EmailGenie",
+      "logoUrl": "https://cdn-icons-png.flaticon.com/512/17928/17928063.png",
       "homepageTrigger": {
         "runFunction": "showSidebar"
       },
@@ -38,7 +38,7 @@
       "secondaryColor": "#D3E3FD",
       "universalActions": [
         {
-          "text": "Open ReplyGenie",
+          "text": "Open EmailGenie",
           "runFunction": "showSidebar"
         }
       ]
